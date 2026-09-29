@@ -5,6 +5,6 @@ export async function POST() {
   const supabase = await createClient();
   await supabase.auth.signOut({ scope: "local" });
   return NextResponse.redirect(
-    new URL("/", process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000")
+    new URL("/", process.env.SITE_URL ?? "http://localhost:3000")
   );
 }
